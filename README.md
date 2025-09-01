@@ -14,7 +14,7 @@
 <h2>Tecnologias utilizadas</h2>
 <ul>
     <li>HTML5</li>
-    <li>CSS3 (Flexbox, media queries, efeitos de transição)</li>
+    <li>CSS</li>
     <li>Fonte Google Fonts: Poppins</li>
 </ul>
 
