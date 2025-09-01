@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fae9fb;
+    position: relative;
+}
+
+body::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background: #ba24c2;
+    clip-path: polygon(86% 0, 100% 0, 100% 100%, 60% 100%); /* corta um elemento em uma forma específica */
+}
+
+.form{
+    z-index: 12;
+    max-width: 1050px;
+    width: 100%;
+    background: #fff;
+    border-radius: 12px;
+    margin: 0 20px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15); /* sombra */
+}
+
+.form .conteudo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 20px;
+}
+
+.conteudo .caixa-imagem{
+    max-width: 55%;
+}
+
+.conteudo .caixa-imagem img{
+    width: 100%;
+}
+
+.conteudo .topico{
+    font-size: 22px;
+    font-weight: 500;
+    color: #ba24c2;
+}
+
+.conteudo form{
+    width: 40%;
+    margin-right: 30px;
+}
+
+/* --------------------- Inputs e Textarea --------------------- */
+.conteudo .caixa-input,
+.conteudo .caixa-mensagem{
+    position: relative;
+    width: 100%;
+    margin: 16px 0;
+}
+
+.conteudo .caixa-input input,
+.conteudo .caixa-mensagem textarea{
+    width: 100%;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    outline: none;
+    padding: 16px;
+    font-size: 16px;
+    background: #fae9fb;
+    transition: all 0.3s ease;
+}
+
+.conteudo .caixa-input input:focus,
+.conteudo .caixa-input input:valid,
+.conteudo .caixa-mensagem textarea:focus,
+.conteudo .caixa-mensagem textarea:valid{
+    border-color: #ba24c2;
+    background-color: #fff;
+}
+
+/* --------------------- Labels --------------------- */
+.conteudo .caixa-input label,
+.conteudo .caixa-mensagem label{
+    position: absolute;
+    left: 16px;
+    top: 16px;
+    color: #636c72;
+    font-size: 15px;
+    pointer-events: none; /* desativa interação do mouse */
+    transition: 0.3s;
+    background: #fae9fb;
+    padding: 0 4px;
+}
+
+.conteudo .caixa-input input:focus + label, /* faz os labels flutuar*/
+.conteudo .caixa-input input:valid + label,
+.conteudo .caixa-mensagem textarea:focus + label,
+.conteudo .caixa-mensagem textarea:valid + label{
+    top: -10px;
+    left: 12px;
+    font-size: 14px;
+    color: #ba24c2;
+    background: #fff;
+}
+
+/* --------------------- Botão --------------------- */
+.conteudo .caixa-input input[type="submit"]{
+    color: #fff;
+    background: #ba24c2;
+    padding-left: 0;
+    font-size:18px;
+    font-weight: 500;
+    cursor: pointer; /* faz a setinha virar uma mãozinha quando passar no botão*/
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.conteudo .caixa-input input[type="submit"]:hover{
+  background-color: #d43ddb;
+}
+
+/* --------------------- Responsividade --------------------- */
+
+/*Ajusta a tela para todos os tipos de aparelhos*/
+
+@media (max-width:1000px) {
+  .conteudo .caixa-imagem{
+    max-width: 70%;
+  }
+  .conteudo{
+    padding: 10px 0;
+  }
+}
+
+@media (max-width:900px) {
+  .conteudo .caixa-imagem{
+    display: none; /*imagem some */
+  }
+  .conteudo form{
+    width: 100%;
+    margin-left: 30px;
+  }
+}
